@@ -1,0 +1,17 @@
+<div *ngIf="apiLoaded | async">
+    <google-map
+    [style.position]="static"
+    height="500px" 
+    width="700px" 
+    (tilesloaded)="loadMap()"
+    [options]='options'
+    id="map"
+    class="postionAfterRender"
+    >
+
+    <map-marker *ngFor="let markerPosition of markerPositions"
+    [position]="markerPosition"
+    [options]="markerOptions"
+    ></map-marker>
+</google-map>
+</div>
